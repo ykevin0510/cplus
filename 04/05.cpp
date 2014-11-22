@@ -15,6 +15,14 @@ public :
 			//memcpy(pName, pN, strlen(pN) + 1);
 	}
 
+	Person(const Person &s){
+		cout << "copy constructing " << s.pName <<endl;
+		pName = new char[strlen(s.pName) + 1];
+		if(pName)
+			strcpy(pName, s.pName);
+			//memcpy(pName, pN, strlen(pN) + 1);
+	}
+
 	~Person(){
 		cout << "destructing " << pName << endl;
 		delete[] pName;
@@ -24,6 +32,6 @@ public :
 int main()
 {
 	Person p1("Randy");
-	//Person p2(p1);
-	Person p2;
+	Person p2(p1);
+	//Person p2;
 }
