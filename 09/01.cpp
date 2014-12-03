@@ -32,4 +32,5 @@ int main() {
 	ss.watchTv();
 	ss.foldOut();
 	ss.sleep();
+	ss.Sofa::setWeight(20);
 }
